@@ -76,7 +76,17 @@ def main():
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
-			st.success("Text Categorized as: {}".format(prediction))
+			if prediction == 1:
+				return "pro"
+			if prediction == -1:
+				return "anti"
+			if prediction == 0:
+				return "neutral"
+			if prediction == 2:
+				return "news"
+
+
+			st.success("Text Categorized as: {}".format(prediction)) 
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
