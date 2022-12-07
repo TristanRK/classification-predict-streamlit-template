@@ -28,12 +28,9 @@ import joblib,os
 # Data dependencies
 import pandas as pd
 
-CURRENT_THEME = "green"
-IS_DARK_THEME = False
-
 st.image(
 	"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
-	width = 100,
+	width = 400,
 )
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
