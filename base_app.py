@@ -28,12 +28,6 @@ import joblib,os
 # Data dependencies
 import pandas as pd
 
-[theme]
-primaryColor = "#E694FF"
-backgroundColor = "#00172B"
-secondaryBackgroundColor = "#0083B8"
-textColor = "#C6CDD4"
-font = "sans-serif"
 
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
