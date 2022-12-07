@@ -39,6 +39,9 @@ tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl f
 # Load your raw data
 raw = pd.read_csv("resources/train.csv")
 
+
+st.bar_chart(x = raw['sentiment'], data = raw)
+
 # The main function where we will build the actual app
 def main():
 	"""Tweet Classifier App with Streamlit """
