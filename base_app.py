@@ -90,10 +90,20 @@ def main():
 			predictor = joblib.load(open(os.path.join("resources/Logreg.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
 
+			predicted = []
+			if prediction == 1:
+				predicted = "pro"
+			if prediction == -1:
+				predicted = "anti"
+			if prediction == 0:
+				predicted = "neutral"
+			if prediction == 2:
+				predicted = "news"
+
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
-			st.success("Text Categorized as: {}".format(prediction)) 
+			st.success("Text Categorized as: {}".format(predicted)) 
 
 	if selectmodel == "SVM":
 		st.info("Prediction with ML Models")
@@ -108,10 +118,20 @@ def main():
 			predictor = joblib.load(open(os.path.join("resources/svm.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
 
+			predicted = []
+			if prediction == 1:
+				predicted = "pro"
+			if prediction == -1:
+				predicted = "anti"
+			if prediction == 0:
+				predicted = "neutral"
+			if prediction == 2:
+				predicted = "news"
+
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
-			st.success("Text Categorized as: {}".format(prediction)) 
+			st.success("Text Categorized as: {}".format(predicted)) 
 
 	if selectmodel == "lsvm":
 		st.info("Prediction with ML Models")
