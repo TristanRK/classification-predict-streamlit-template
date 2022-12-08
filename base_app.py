@@ -65,8 +65,7 @@ def main():
 	selection = st.sidebar.selectbox("Choose Option", options)
 	selectmodel = st.sidebar.selectbox("Choose Option", models)
 
-	#selectmodel = st.radio('Type of model you want to use', models=["Log regression","SVM","lsvm"], 
-          #horizontal=True)
+	st.radio('Type of model you want to use', models=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the "Information" page
 	if selection == "Information":
