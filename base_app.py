@@ -88,8 +88,8 @@ def main():
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 
-
-	selectmodel = st.radio('Model Selection', options=["Log regression","SVM","lsvm"], horizontal=True)
+	st.subheader("Model Selection")
+	selectmodel = st.radio( options=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the predication page
 	if selectmodel == "Log regression":
