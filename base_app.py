@@ -83,13 +83,13 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some background information here")
 
-		st.subheader("Raw Twitter data and label")
+		st.subheader("Raw data")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 
 
-	selectmodel = st.radio('Type of model you want to use', options=["Log regression","SVM","lsvm"], horizontal=True)
+	selectmodel = st.radio('Model Selection', options=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the predication page
 	if selectmodel == "Log regression":
