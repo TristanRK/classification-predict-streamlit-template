@@ -64,9 +64,10 @@ def main():
 	st.title("EnviroData")
 	st.subheader("Climate change tweet classification")
 
+
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = ["Background", "Information"]
+	options = [ "Information", "Models"]
 	#models = ["Log regression","SVM","lsvm"]
 	selection = st.sidebar.selectbox("Choose Option", options)
 	#selectmodel = st.sidebar.selectbox("Choose Option", models)
@@ -83,105 +84,95 @@ def main():
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
-	# Building out the "Background" page
-	if selection == "Background":
-		st.info("General Information")
-		# You can read a markdown file from supporting resources folder
-		st.markdown("Some background information here")
+	if selection == "Models":
+		st.subheader("Model Selection")
+		selectmodel = st.radio("Choose", options=["Log regression","SVM","lsvm"], horizontal=True)
 
-		st.subheader("Raw data")
-		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
-			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+		# Building out the predication page
+		if selectmodel == "Log regression":
+			st.info("Prediction with ML Models")
+			# Creating a text box for user input
+			tweet_text = st.text_area("Enter Text","Type Here")
 
+			if st.button("Classify"):
+				# Transforming user input with vectorizer
+				vect_text = tweet_cv.transform([tweet_text]).toarray()
+				# Load your .pkl file with the model of your choice + make predictions
+				# Try loading in multiple models to give the user a choice
+				predictor = joblib.load(open(os.path.join("resources/Logreg.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-	st.subheader("Model Selection")
-	selectmodel = st.radio("Choose", options=["Log regression","SVM","lsvm"], horizontal=True)
+				predicted = []
+				if prediction == 1:
+					predicted = "pro"
+				if prediction == -1:
+					predicted = "anti"
+				if prediction == 0:
+					predicted = "neutral"
+				if prediction == 2:
+					predicted = "news"
 
-	# Building out the predication page
-	if selectmodel == "Log regression":
-		st.info("Prediction with ML Models")
-		# Creating a text box for user input
-		tweet_text = st.text_area("Enter Text","Type Here")
+				# When model has successfully run, will print prediction
+				# You can use a dictionary or similar structure to make this output
+				# more human interpretable.
+				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if st.button("Classify"):
-			# Transforming user input with vectorizer
-			vect_text = tweet_cv.transform([tweet_text]).toarray()
-			# Load your .pkl file with the model of your choice + make predictions
-			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/Logreg.pkl"),"rb"))
-			prediction = predictor.predict(vect_text)
+		if selectmodel == "SVM":
+			st.info("Prediction with ML Models")
+			# Creating a text box for user input
+			tweet_text = st.text_area("Enter Text","Type Here")
 
-			predicted = []
-			if prediction == 1:
-				predicted = "pro"
-			if prediction == -1:
-				predicted = "anti"
-			if prediction == 0:
-				predicted = "neutral"
-			if prediction == 2:
-				predicted = "news"
+			if st.button("Classify"):
+				# Transforming user input with vectorizer
+				vect_text = tweet_cv.transform([tweet_text]).toarray()
+				# Load your .pkl file with the model of your choice + make predictions
+				# Try loading in multiple models to give the user a choice
+				predictor = joblib.load(open(os.path.join("resources/svm.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-			# When model has successfully run, will print prediction
-			# You can use a dictionary or similar structure to make this output
-			# more human interpretable.
-			st.success("Text Categorized as: {}".format(predicted)) 
+				predicted = []
+				if prediction == 1:
+					predicted = "pro"
+				if prediction == -1:
+					predicted = "anti"
+				if prediction == 0:
+					predicted = "neutral"
+				if prediction == 2:
+					predicted = "news"
 
-	if selectmodel == "SVM":
-		st.info("Prediction with ML Models")
-		# Creating a text box for user input
-		tweet_text = st.text_area("Enter Text","Type Here")
+				# When model has successfully run, will print prediction
+				# You can use a dictionary or similar structure to make this output
+				# more human interpretable.
+				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if st.button("Classify"):
-			# Transforming user input with vectorizer
-			vect_text = tweet_cv.transform([tweet_text]).toarray()
-			# Load your .pkl file with the model of your choice + make predictions
-			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/svm.pkl"),"rb"))
-			prediction = predictor.predict(vect_text)
+		if selectmodel == "lsvm":
+			st.info("Prediction with ML Models")
+			# Creating a text box for user input
+			tweet_text = st.text_area("Enter Text","Type Here")
 
-			predicted = []
-			if prediction == 1:
-				predicted = "pro"
-			if prediction == -1:
-				predicted = "anti"
-			if prediction == 0:
-				predicted = "neutral"
-			if prediction == 2:
-				predicted = "news"
+			if st.button("Classify"):
+				# Transforming user input with vectorizer
+				vect_text = tweet_cv.transform([tweet_text]).toarray()
+				# Load your .pkl file with the model of your choice + make predictions
+				# Try loading in multiple models to give the user a choice
+				predictor = joblib.load(open(os.path.join("resources/lsvm.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-			# When model has successfully run, will print prediction
-			# You can use a dictionary or similar structure to make this output
-			# more human interpretable.
-			st.success("Text Categorized as: {}".format(predicted)) 
-
-	if selectmodel == "lsvm":
-		st.info("Prediction with ML Models")
-		# Creating a text box for user input
-		tweet_text = st.text_area("Enter Text","Type Here")
-
-		if st.button("Classify"):
-			# Transforming user input with vectorizer
-			vect_text = tweet_cv.transform([tweet_text]).toarray()
-			# Load your .pkl file with the model of your choice + make predictions
-			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/lsvm.pkl"),"rb"))
-			prediction = predictor.predict(vect_text)
-
-			predicted = []
-			if prediction == 1:
-				predicted = "pro"
-			if prediction == -1:
-				predicted = "anti"
-			if prediction == 0:
-				predicted = "neutral"
-			if prediction == 2:
-				predicted = "news"
+				predicted = []
+				if prediction == 1:
+					predicted = "pro"
+				if prediction == -1:
+					predicted = "anti"
+				if prediction == 0:
+					predicted = "neutral"
+				if prediction == 2:
+					predicted = "news"
 			
 
-			# When model has successfully run, will print prediction
-			# You can use a dictionary or similar structure to make this output
-			# more human interpretable.
-			st.success("Text Categorized as: {}".format(predicted)) 
+				# When model has successfully run, will print prediction
+				# You can use a dictionary or similar structure to make this output
+				# more human interpretable.
+				st.success("Text Categorized as: {}".format(predicted)) 
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
