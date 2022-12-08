@@ -87,7 +87,7 @@ def main():
 
 		st.subheader("Hashtags")
 
-		st.image(ima,width = 500)
+		st.image(ima,width = 800)
 
 
 	if selection == "Models":
