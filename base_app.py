@@ -89,7 +89,7 @@ def main():
 
 
 	st.subheader("Model Selection")
-	selectmodel = st.radio( options=["Log regression","SVM","lsvm"], horizontal=True)
+	selectmodel = st.radio("Choose", options=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the predication page
 	if selectmodel == "Log regression":
