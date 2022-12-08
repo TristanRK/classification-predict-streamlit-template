@@ -29,6 +29,7 @@ import joblib,os
 from PIL import Image
 # Loading Image using PIL
 im = Image.open('content/image.jpg')
+ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im)
 
@@ -83,6 +84,10 @@ def main():
 		st.subheader("Raw Twitter data and sentiment labels")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+
+		st.subheader("Hashtags")
+
+		st.image(ima,width = 500)
 
 
 	if selection == "Models":
