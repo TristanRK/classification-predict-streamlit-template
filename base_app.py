@@ -61,11 +61,11 @@ def main():
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
 	options = ["Background", "Information"]
-	models = ["Log regression","SVM","lsvm"]
+	#models = ["Log regression","SVM","lsvm"]
 	selection = st.sidebar.selectbox("Choose Option", options)
-	selectmodel = st.sidebar.selectbox("Choose Option", models)
+	#selectmodel = st.sidebar.selectbox("Choose Option", models)
 
-	st.radio('Type of model you want to use', options=["Log regression","SVM","lsvm"], horizontal=True)
+	selectmodel = st.radio('Type of model you want to use', options=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the "Information" page
 	if selection == "Information":
