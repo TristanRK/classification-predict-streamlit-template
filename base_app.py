@@ -68,9 +68,9 @@ def main():
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
 	options = [ "Information", "Models"]
-	#models = ["Log regression","SVM","lsvm"]
+	
 	selection = st.sidebar.selectbox("Choose Option", options)
-	#selectmodel = st.sidebar.selectbox("Choose Option", models)
+	
 
 	
 
@@ -80,13 +80,14 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
 
-		st.subheader("Raw Twitter data and label")
+		st.subheader("Raw Twitter data and sentiment labels")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
+
 	if selection == "Models":
 		st.subheader("Model Selection")
-		selectmodel = st.radio("Choose", options=["Log regression","SVM","lsvm"], horizontal=True)
+		selectmodel = st.radio(" ", options=["Log regression","SVM","lsvm"], horizontal=True)
 
 		# Building out the predication page
 		if selectmodel == "Log regression":
