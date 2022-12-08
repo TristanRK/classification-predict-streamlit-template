@@ -65,7 +65,7 @@ def main():
 	selection = st.sidebar.selectbox("Choose Option", options)
 	#selectmodel = st.sidebar.selectbox("Choose Option", models)
 
-	selectmodel = st.radio('Type of model you want to use', options=["Log regression","SVM","lsvm"], horizontal=True)
+	
 
 	# Building out the "Information" page
 	if selection == "Information":
@@ -86,6 +86,10 @@ def main():
 		st.subheader("Raw Twitter data and label")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+
+
+
+	selectmodel = st.radio('Type of model you want to use', options=["Log regression","SVM","lsvm"], horizontal=True)
 
 	# Building out the predication page
 	if selectmodel == "Log regression":
