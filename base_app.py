@@ -87,6 +87,18 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		st.subheader("Where is our data from?")
 		st.markdown("The collection of this data was funded by a Canada Foundation for Innovation JELF Grant to Chris Bauch, University of Waterloo. The dataset aggregates tweets pertaining to climate change collected between Apr 27, 2015 and Feb 21, 2018. In total, 43,943 tweets were collected. Each tweet is labelled as one of 4 classes, which are described below.")
+		
+		st.subheader("Classes")
+		st.markdown("2 News: the tweet links to factual news about climate change")
+		st.markdown("1 Pro: the tweet supports the belief of man-made climate change")
+		st.markdown("0 Neutral: the tweet neither supports nor refutes the belief of man-made climate change")
+		st.markdown("-1 Anti: the tweet does not believe in man-made climate change Variable definitions")
+
+		st.subheader("Features")
+		st.markdown("sentiment: Which class a tweet belongs in (refer to Class Description above)")
+		st.markdown("message: Tweet body")
+		st.markdown("tweetid: Twitter unique id")
+
 
 		st.subheader("Raw Twitter data and sentiment labels")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
