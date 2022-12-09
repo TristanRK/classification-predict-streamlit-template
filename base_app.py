@@ -45,34 +45,6 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 import pandas as pd
 
 
-## importing/adding graphs
-def ht_topic_count(tweet): 
-    """
-    Using regular expressions, this method takes a tweet and retrieves the top 15 hashtags.
-    These hashtags are kept in their own dataframe, along with a tally of how often they appear. 
-
-    Input:
-        tweet: original tweets
-        datatype: 'str'
-
-    Output:
-        hashtag_df: dataframe containing the top hashtags in the tweets
-        datatype: dataframe
-    """
-    
-    hashtags = []    
-    for i in tweet:
-        ht = re.findall(r'#(\w+)', i)
-        hashtags.append(ht)
-        
-    hashtags = sum(hashtags, [])
-    frequency = nltk.FreqDist(hashtags)
-    
-    dfhashtag = pd.DataFrame({'hashtag Topic': list(frequency.keys()),
-                       'hastag count': list(frequency.values())})
-    return dfhashtag.nlargest(15, columns='hastag count')
-
-
 
 
 
@@ -111,7 +83,7 @@ def main():
 
 	# Building out the "Information" page
 	if selection == "Information":
-		st.info("General Information")
+		st.info("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received. With this context, EDSA throwing a challeng with the task of creating a Machine Learning model that is able to classify whether or not a person believes in climate change, based on their novel tweet data. Providing an accurate and robust solution to this task gives companies access to a broad base of consumer sentiment, spanning multiple demographic and geographic categories - thus increasing their insights and informing future marketing strategies")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
 
