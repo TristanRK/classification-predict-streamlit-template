@@ -74,7 +74,7 @@ def main():
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = [ "Information", "Models", "About"]
+	options = ["About", "Project Information", "Models" ]
 	
 	selection = st.sidebar.selectbox("Choose Option", options)
 	
@@ -82,7 +82,7 @@ def main():
 	
 
 	# Building out the "Information" page
-	if selection == "Information":
+	if selection == "Project Information":
 		st.info("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received. With this context, EDSA throwing a challeng with the task of creating a Machine Learning model that is able to classify whether or not a person believes in climate change, based on their novel tweet data. Providing an accurate and robust solution to this task gives companies access to a broad base of consumer sentiment, spanning multiple demographic and geographic categories - thus increasing their insights and informing future marketing strategies")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
@@ -97,13 +97,9 @@ def main():
 
 	# Building out the "Information" page
 	if selection == "About":
-		st.info("We are Greener Earth Inc")
+		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
-
-		st.subheader("Raw Twitter data and sentiment labels")
-		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
-			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 
 
