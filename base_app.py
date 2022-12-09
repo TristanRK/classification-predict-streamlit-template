@@ -114,6 +114,8 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
 
+		st.subheader("Our Team")
+
 		st.markdown("Solomon")
 		st.image("content/Solomon.jpg", width = 300)
 
