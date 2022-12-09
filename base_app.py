@@ -100,7 +100,7 @@ def main():
 		st.markdown("tweetid: Twitter unique id")
 
 
-		st.subheader("Raw Twitter data and sentiment labels")
+		st.subheader("Raw data with sentiment labels")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
