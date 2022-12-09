@@ -44,6 +44,40 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
+
+## importing/adding graphs
+def ht_topic_count(tweet): 
+    """
+    Using regular expressions, this method takes a tweet and retrieves the top 15 hashtags.
+    These hashtags are kept in their own dataframe, along with a tally of how often they appear. 
+
+    Input:
+        tweet: original tweets
+        datatype: 'str'
+
+    Output:
+        hashtag_df: dataframe containing the top hashtags in the tweets
+        datatype: dataframe
+    """
+    
+    hashtags = []    
+    for i in tweet:
+        ht = re.findall(r'#(\w+)', i)
+        hashtags.append(ht)
+        
+    hashtags = sum(hashtags, [])
+    frequency = nltk.FreqDist(hashtags)
+    
+    dfhashtag = pd.DataFrame({'hashtag Topic': list(frequency.keys()),
+                       'hastag count': list(frequency.values())})
+    return dfhashtag.nlargest(15, columns='hastag count')
+
+
+
+
+
+
+
 st.image(
 	"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
 	width = 650,
@@ -62,7 +96,7 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("EnviroData")
+	st.title("Greener Earth Inc.")
 	st.subheader("Climate change tweet classification")
 
 
