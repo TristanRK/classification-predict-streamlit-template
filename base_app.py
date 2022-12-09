@@ -31,7 +31,7 @@ from PIL import Image
 im = Image.open('content/image.jpg')
 ima = Image.open('content/hashtags.png')
 # Adding Image to web app
-st.set_page_config(page_title="base_app.py", page_icon = im)
+st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
 
 hide_default_format = """
        <style>
@@ -86,7 +86,7 @@ def main():
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 		st.subheader("Hashtags")
-
+		#col1, col2, col3, col4 = st.beta_columns((2,1,1,1))
 		st.image(ima,width = 800)
 
 
