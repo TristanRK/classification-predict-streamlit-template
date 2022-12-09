@@ -80,7 +80,7 @@ def ht_topic_count(tweet):
 
 st.image(
 	"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
-	width = 650,
+	width = 750,
 )
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
@@ -96,7 +96,7 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("Greener Earth Inc.")
+	st.title("EnviroData")
 	st.subheader("Climate change tweet classification")
 
 
