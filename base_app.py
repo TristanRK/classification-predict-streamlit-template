@@ -100,7 +100,12 @@ def main():
 		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
-		st.image("content/Solomon.jpg", width = 450)
+
+		st.markdown("Solomon")
+		st.image("content/Solomon.jpg", width = 300)
+
+		st.markdown("Peakanyo")
+		st.image("content/Peakanyo.jpg", width = 300)
 
 
 
