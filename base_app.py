@@ -102,7 +102,7 @@ def main():
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = [ "Information", "Models"]
+	options = [ "Information", "Models", "About"]
 	
 	selection = st.sidebar.selectbox("Choose Option", options)
 	
@@ -122,6 +122,17 @@ def main():
 		st.subheader("Hashtags")
 		#col1, col2, col3, col4 = st.beta_columns((2,1,1,1))
 		st.image(ima,width = 800)
+
+	# Building out the "Information" page
+	if selection == "About":
+		st.info("We are Greener Earth Inc")
+		# You can read a markdown file from supporting resources folder
+		st.markdown("Some information here")
+
+		st.subheader("Raw Twitter data and sentiment labels")
+		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
+			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+
 
 
 	if selection == "Models":
