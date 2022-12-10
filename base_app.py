@@ -109,7 +109,7 @@ def main():
 
 		st.subheader("Hashtags")
 		
-		st.image("resources/hashtags2.png",width = 800)
+		st.image("content/hashtags2.png",width = 800)
 		st.image("resources/hashtags.svg", width= 400,)
 
 	# Building out the "Information" page
