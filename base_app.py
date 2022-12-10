@@ -129,7 +129,7 @@ def main():
 		st.image("content/Farayi.jpg", width = 300)
 
 		st.markdown("Tristan")
-		st.image("Tristan.png", width = 300)
+		st.image("content/Tristan.png", width = 300)
 
 
 
