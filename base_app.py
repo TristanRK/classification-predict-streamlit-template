@@ -122,6 +122,9 @@ def main():
 		st.markdown("Peakanyo")
 		st.image("content/Peakanyo.jpg", width = 300)
 
+		st.markdown("Farayi")
+		st.image("content/Farayi.jpg")
+
 
 
 	if selection == "Models":
