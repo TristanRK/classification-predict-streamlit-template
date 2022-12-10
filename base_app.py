@@ -320,7 +320,7 @@ def main():
 		with col1:
 			st.write(f1[['Models','F1_score']])
 		with col2:
-			st.bar_chart(f1,x="Models", y="F1_score", width=650)
+			st.bar_chart(f1,x="Models", y="F1_score", width=400)
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
