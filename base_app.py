@@ -44,7 +44,14 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
+col1, col2, col3 = st.columns(3)
 
+with col1:
+   	st.write(' ')
+with col2:
+	st.write(" ")
+with col3:
+	st.image('content/logo.png', width = 100)
 
 
 
@@ -68,18 +75,9 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	col1, col2, col3 = st.columns(3)
 
-	with col1:
-   		st.title('EnviroData')
-	with col2:
-		st.image("content/logo.png", width = 200)
-	with col3:
-		st.write(' ')
-
-
-	#st.title("EnviroData")
-	#st.subheader("Climate change tweet classification")
+	st.title("EnviroData")
+	st.subheader("Climate change tweet classification")
 
 
 	# Creating sidebar with selection box -
