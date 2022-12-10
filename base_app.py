@@ -44,9 +44,9 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
-col1, mid, col2 = st.columns([1,3.5,20])
+col1, mid, col2 = st.columns([1,3.9,20])
 with col2:
-    st.image('content/Logo2.png', width=80)
+    st.image('content/Logo2.png', width=60)
 with col1:
     st.title('EnviroData')
 
