@@ -108,9 +108,9 @@ def main():
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 		st.subheader("Hashtags")
-		#col1, col2, col3, col4 = st.beta_columns((2,1,1,1))
-		st.image(ima,width = 800)
-		st.image("resources/hashtags.svg", width= 400)
+		
+		st.image("resources/hashtags2.png",width = 800)
+		st.image("resources/hashtags.svg", width= 400,)
 
 	# Building out the "Information" page
 	if selection == "About":
