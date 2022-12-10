@@ -46,7 +46,7 @@ import pandas as pd
 
 col1, mid, col2 = st.columns([1,3,20])
 with col2:
-    st.image('content/Logo2.png', width=120)
+    st.image('content/Logo2.png', width=90)
 with col1:
     st.title('EnviroData')
 
