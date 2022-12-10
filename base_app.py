@@ -313,6 +313,7 @@ def main():
 		
 		st.subheader("F1 scores")
 		st.write(f1) # will write the df to the page
+		st.write(" ")
 
 		st.bar_chart(f1,x="Models", y="F1_score", width=400)
 
