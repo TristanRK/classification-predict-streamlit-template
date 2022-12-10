@@ -44,20 +44,11 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-   	st.write(' ')
-with col2:
-	st.write(" ")
-with col3:
-	st.image('content/logo.png', width = 100)
-
 col1, mid, col2 = st.columns([1,1,20])
 with col1:
-    st.image('content/logo.png', width=60)
+    st.image('content/logo.png', width=80)
 with col2:
-    st.write('A Name')
+    st.title('EnviroData')
 
 
 
