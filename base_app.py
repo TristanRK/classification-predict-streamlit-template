@@ -110,7 +110,7 @@ def main():
 		st.subheader("Hashtags")
 		
 		#st.image("content/hashtags2.png",width = 800)
-		st.image("resources/hashtag.jpg")
+		st.image("content/hashtag.jpg")
 
 	# Building out the "Information" page
 	if selection == "About":
