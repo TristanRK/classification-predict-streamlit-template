@@ -135,10 +135,10 @@ def main():
 
 	if selection == "Models":
 		st.subheader("Model Selection")
-		selectmodel = st.radio(" ", options=["Log regression","SVC","lsvc","RFC","smote lsvc", "smote LR"], horizontal=True)
+		selectmodel = st.radio(" ", options=["Logistic Regression","SVC","Linear SVC","RFC","SMOTE Linear SVC", "SMOTE Logistic Regression"], horizontal=True)
 
 		# Building out the predication page
-		if selectmodel == "Log regression":
+		if selectmodel == "Logistic Regression":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
@@ -194,7 +194,7 @@ def main():
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if selectmodel == "lsvc":
+		if selectmodel == "Linear SVC":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
@@ -253,7 +253,7 @@ def main():
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if selectmodel == "smote lsvc":
+		if selectmodel == "SMOTE Linear SVC":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
@@ -282,7 +282,7 @@ def main():
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if selectmodel == "smote LR":
+		if selectmodel == "SMOTE Logistic Regression":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
