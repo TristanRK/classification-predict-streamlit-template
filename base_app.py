@@ -316,11 +316,11 @@ def main():
 
 		
 
-		col1,  col2 = st.columns([1,10])
+		col1,  col2 = st.columns([1,20])
 		with col1:
 			st.write(f1[['Models','F1_score']])
 		with col2:
-			st.bar_chart(f1,x="Models", y="F1_score")
+			st.bar_chart(f1,x="Models", y="F1_score", width=650)
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
