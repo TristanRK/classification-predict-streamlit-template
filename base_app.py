@@ -72,16 +72,14 @@ def main():
 
 	with col1:
    		st.title('EnviroData')
-
 	with col2:
-    	st.image("content/logo.png")
-
+		st.image("content/logo.png")
 	with col3:
-   		st.write(' ')
+		st.write(' ')
 
 
-	st.title("EnviroData")
-	st.subheader("Climate change tweet classification")
+	#st.title("EnviroData")
+	#st.subheader("Climate change tweet classification")
 
 
 	# Creating sidebar with selection box -
