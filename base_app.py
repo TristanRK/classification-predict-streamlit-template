@@ -28,7 +28,7 @@ import joblib,os
 
 from PIL import Image
 # Loading Image using PIL
-im = Image.open('content/Logo2.jpg')
+im = Image.open('content/Logo2.png')
 ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
