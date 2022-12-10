@@ -62,7 +62,7 @@ tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl f
 
 # Load your raw data
 raw = pd.read_csv("resources/train.csv")
-
+f1 = pd.read_csv("resources/f1.csv")
 
 # The main function where we will build the actual app
 def main():
@@ -310,6 +310,9 @@ def main():
 				# You can use a dictionary or similar structure to make this output
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
+		
+		st.subheader("F1 scores")
+		st.write(f1) # will write the df to the page
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
