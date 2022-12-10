@@ -53,7 +53,7 @@ with col2:
 with col3:
 	st.image('content/logo.png', width = 100)
 
-col1, mid, col2 = st.beta_columns([1,1,20])
+col1, mid, col2 = st.columns([1,1,20])
 with col1:
     st.image('content/logo.jpg', width=60)
 with col2:
