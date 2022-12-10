@@ -314,7 +314,7 @@ def main():
 		st.subheader("F1 scores")
 		st.write(f1) # will write the df to the page
 
-		st.bar_chart(f1)
+		st.bar_chart(f1,x="Models", y="F1_score")
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
