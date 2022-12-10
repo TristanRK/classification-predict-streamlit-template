@@ -28,7 +28,7 @@ import joblib,os
 
 from PIL import Image
 # Loading Image using PIL
-im = Image.open('content/image.jpg')
+im = Image.open('content/Logo2.jpg')
 ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
@@ -46,7 +46,7 @@ import pandas as pd
 
 col1, mid, col2 = st.columns([1,3,20])
 with col2:
-    st.image('content/logo.png', width=120)
+    st.image('content/Logo2.png', width=120)
 with col1:
     st.title('EnviroData')
 
