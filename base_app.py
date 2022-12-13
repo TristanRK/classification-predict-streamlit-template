@@ -51,7 +51,7 @@ with col1:
 	st.write(" ")
 with col2:
     st.image('content/Logo2.png', width=100)
-with col1:
+with col3:
     st.write(" ")
 
 col1, mid, col2 = st.columns([1,3.9,20])
