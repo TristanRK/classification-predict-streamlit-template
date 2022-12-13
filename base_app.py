@@ -44,7 +44,6 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
-st.image('content/Logo2.png', width=100)
 
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -54,12 +53,13 @@ with col2:
 with col3:
     st.write(" ")
 
-col1, mid, col2 = st.columns([1,3.9,20])
-with col2:
-    st.image('content/Logo2.png', width=60)
+col1, col2, col3 = st.columns(3)
 with col1:
+	st.write(" ")
+with col2:
     st.title('EnviroData')
-
+with col3:
+    st.write(" ")
 
 
 st.image(
