@@ -277,7 +277,7 @@ def main():
 				vect_text = tweet_cv.transform([tweet_text]).toarray()
 				# Load your .pkl file with the model of your choice + make predictions
 				# Try loading in multiple models to give the user a choice
-				predictor = joblib.load(open(os.path.join("resources/lsvc_smote.pkl"),"rb"))
+				predictor = joblib.load(open(os.path.join("resources/LSVCSMOTE.pkl"),"rb"))
 				prediction = predictor.predict(vect_text)
 
 				predicted = []
@@ -306,7 +306,7 @@ def main():
 				vect_text = tweet_cv.transform([tweet_text]).toarray()
 				# Load your .pkl file with the model of your choice + make predictions
 				# Try loading in multiple models to give the user a choice
-				predictor = joblib.load(open(os.path.join("resources/LR_smote.pkl"),"rb"))
+				predictor = joblib.load(open(os.path.join("resources/LogregSMOTE.pkl"),"rb"))
 				prediction = predictor.predict(vect_text)
 
 				predicted = []
