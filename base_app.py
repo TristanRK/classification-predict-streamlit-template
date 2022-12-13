@@ -34,12 +34,16 @@ ima = Image.open('content/hashtags.png')
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
 
 ###Putting logo in top middle of each page and using markdown to put company name below logo for each page
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
 	st.write(" ")
 with col2:
-    st.image('content/Logo2.png')
+	st.write(" ")
 with col3:
+    st.image('content/Logo2.png')
+with col4:
+    st.write(" ")
+with col5:
     st.write(" ")
 st.markdown("<h1 style='text-align: center; color: grey;'>EnviroData</h1>", unsafe_allow_html=True)
 
