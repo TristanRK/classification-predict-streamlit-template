@@ -158,7 +158,7 @@ def main():
 		# Building out the predication page
 		if selectmodel == "Logistic Regression":
 			# Creating a text box for user input
-			tweet_text = st.text_area("Can make prediction with ML Models with text box below","Type Here")
+			tweet_text = st.text_area("Test Logistic Regression model below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
@@ -184,9 +184,9 @@ def main():
 				st.success("Text Categorized as: {}".format(predicted)) 
 
 		if selectmodel == "Linear SVC":
-			st.info("Prediction with ML Models")
+			
 			# Creating a text box for user input
-			tweet_text = st.text_area("Enter Text","Type Here")
+			tweet_text = st.text_area("Test Linear Support Vector Machine below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
@@ -212,9 +212,9 @@ def main():
 				st.success("Text Categorized as: {}".format(predicted)) 
 
 		if selectmodel == "Balanced Linear SVC":
-			st.info("Prediction with ML Models")
+			
 			# Creating a text box for user input
-			tweet_text = st.text_area("Enter Text","Type Here")
+			tweet_text = st.text_area("Test balanced Support Vector Machine below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
@@ -242,9 +242,9 @@ def main():
 
 
 		if selectmodel == "RFC":
-			st.info("Prediction with ML Models")
+			
 			# Creating a text box for user input
-			tweet_text = st.text_area("Enter Text","Type Here")
+			tweet_text = st.text_area("Test Random Forest Classifier below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
@@ -271,9 +271,9 @@ def main():
 				st.success("Text Categorized as: {}".format(predicted)) 
 
 		if selectmodel == "SMOTE Linear SVC":
-			st.info("Prediction with ML Models")
+			
 			# Creating a text box for user input
-			tweet_text = st.text_area("Enter Text","Type Here")
+			tweet_text = st.text_area("Test Linear Support Vector Machine trained after SMOTE below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
@@ -300,9 +300,9 @@ def main():
 				st.success("Text Categorized as: {}".format(predicted)) 
 
 		if selectmodel == "SMOTE Logistic Regression":
-			st.info("Prediction with ML Models")
+			
 			# Creating a text box for user input
-			tweet_text = st.text_area("Enter Text","Type Here")
+			tweet_text = st.text_area("Test Logistic Regression model after SMOTE below","Type Here")
 
 			if st.button("Classify"):
 				# Transforming user input with vectorizer
