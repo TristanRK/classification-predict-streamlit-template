@@ -149,7 +149,7 @@ def main():
 		st.write(" ")
 		st.write(" ")
 		st.subheader("Model Selection")
-		selectmodel = st.radio(" ", options=["Logistic Regression","SVC","Linear SVC","RFC","SMOTE Linear SVC", "SMOTE Logistic Regression"], horizontal=True)
+		selectmodel = st.radio(" ", options=["Logistic Regression","Linear SVC","Balanced Linear SVC","RFC","SMOTE Linear SVC", "SMOTE Logistic Regression"], horizontal=True)
 
 		# Building out the predication page
 		if selectmodel == "Logistic Regression":
@@ -180,7 +180,7 @@ def main():
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if selectmodel == "SVC":
+		if selectmodel == "Linear SVC":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
@@ -190,7 +190,7 @@ def main():
 				vect_text = tweet_cv.transform([tweet_text]).toarray()
 				# Load your .pkl file with the model of your choice + make predictions
 				# Try loading in multiple models to give the user a choice
-				predictor = joblib.load(open(os.path.join("resources/SVCmodel.pkl"),"rb"))
+				predictor = joblib.load(open(os.path.join("resources/LinSVC.pkl"),"rb"))
 				prediction = predictor.predict(vect_text)
 
 				predicted = []
@@ -208,7 +208,7 @@ def main():
 				# more human interpretable.
 				st.success("Text Categorized as: {}".format(predicted)) 
 
-		if selectmodel == "Linear SVC":
+		if selectmodel == "Balanced Linear SVC":
 			st.info("Prediction with ML Models")
 			# Creating a text box for user input
 			tweet_text = st.text_area("Enter Text","Type Here")
@@ -218,7 +218,7 @@ def main():
 				vect_text = tweet_cv.transform([tweet_text]).toarray()
 				# Load your .pkl file with the model of your choice + make predictions
 				# Try loading in multiple models to give the user a choice
-				predictor = joblib.load(open(os.path.join("resources/LinearSVC.pkl"),"rb"))
+				predictor = joblib.load(open(os.path.join("resources/BalancedSVC.pkl"),"rb"))
 				prediction = predictor.predict(vect_text)
 
 				predicted = []
@@ -248,7 +248,7 @@ def main():
 				vect_text = tweet_cv.transform([tweet_text]).toarray()
 				# Load your .pkl file with the model of your choice + make predictions
 				# Try loading in multiple models to give the user a choice
-				predictor = joblib.load(open(os.path.join("resources/RFCmodel.pkl"),"rb"))
+				predictor = joblib.load(open(os.path.join("resources/RandomFC.pkl"),"rb"))
 				prediction = predictor.predict(vect_text)
 
 				predicted = []
