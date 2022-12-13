@@ -53,7 +53,8 @@ with col2:
 with col3:
     st.write(" ")
 
-st.markdown("<h1 style='text-align: center; color: grey;'>EnviroData</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 with col1:
