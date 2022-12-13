@@ -33,8 +33,8 @@ ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
 
-imag = st.image('content/Logo2.png')
-st.header(imag)
+#imag = st.image('content/Logo2.png')
+#st.header(imag)
 
 col1, col2, col3 = st.columns(3)
 with col1:
