@@ -33,9 +33,6 @@ ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
 
-#imag = st.image('content/Logo2.png')
-#st.header(imag)
-
 col1, col2, col3 = st.columns(3)
 with col1:
 	st.write(" ")
@@ -46,8 +43,7 @@ with col3:
 
 st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
 
-
-
+##taking away streamlit's default page menu 
 hide_default_format = """
        <style>
        #MainMenu {visibility: hidden; }
@@ -61,13 +57,15 @@ import pandas as pd
 
 
 
-st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
+#st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
 
 
-st.image(
-	"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
-	width = 800,
-)
+#st.image(
+	#"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
+	#width = 800,
+#)
+
+
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
 tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl file
@@ -126,6 +124,10 @@ def main():
 
 	# Building out the "Information" page
 	if selection == "About":
+
+		st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
+		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 800)
+
 		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
