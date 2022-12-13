@@ -32,6 +32,16 @@ im = Image.open('content/Logo2.png')
 ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
+col1, col2, col3 = st.columns(3)
+with col1:
+	st.write(" ")
+with col2:
+    st.image('content/Logo2.png')
+with col3:
+    st.write(" ")
+
+st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
+
 
 hide_default_format = """
        <style>
@@ -45,15 +55,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 import pandas as pd
 
 
-col1, col2, col3 = st.columns(3)
-with col1:
-	st.write(" ")
-with col2:
-    st.image('content/Logo2.png')
-with col3:
-    st.write(" ")
 
-st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
 
 
