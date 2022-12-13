@@ -96,6 +96,10 @@ def main():
 
 	# Building out the "Information" page
 	if selection == "Project Information":
+		st.markdown("<h2 style='text-align: left; color: black;'>Project Information</h2>", unsafe_allow_html=True)
+		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 800)
+		
+		
 		st.info("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received. With this context, EDSA throwing a challeng with the task of creating a Machine Learning model that is able to classify whether or not a person believes in climate change, based on their novel tweet data. Providing an accurate and robust solution to this task gives companies access to a broad base of consumer sentiment, spanning multiple demographic and geographic categories - thus increasing their insights and informing future marketing strategies")
 		# You can read a markdown file from supporting resources folder
 		st.subheader("Where is our data from?")
@@ -149,6 +153,9 @@ def main():
 
 
 	if selection == "Models":
+		st.markdown("<h2 style='text-align: left; color: black;'>Machine Learning Models</h2>", unsafe_allow_html=True)
+		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 800)
+		
 		st.subheader("Model Selection")
 		selectmodel = st.radio(" ", options=["Logistic Regression","SVC","Linear SVC","RFC","SMOTE Linear SVC", "SMOTE Logistic Regression"], horizontal=True)
 
