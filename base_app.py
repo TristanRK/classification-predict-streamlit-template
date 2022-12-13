@@ -136,6 +136,7 @@ def main():
 
 		#st.markdown("Tristan Krafft")
 		with cols4:
+			st.markdown("<h2 style='text-align: left; color: black;'>grey</h2>", unsafe_allow_html=True)
 			st.image("content/Tristan.png", width = 200, caption="Tristan Krafft: ML Engineer")
 
 
