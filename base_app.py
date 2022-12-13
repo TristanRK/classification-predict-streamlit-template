@@ -44,6 +44,14 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
+col1, col2, col3 = st.columns([1,1,1])
+with col1:
+	st.write(" ")
+with col2:
+    st.image('content/Logo2.png', width=100)
+with col1:
+    st.write(" ")
+
 col1, mid, col2 = st.columns([1,3.9,20])
 with col2:
     st.image('content/Logo2.png', width=60)
@@ -118,19 +126,19 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
 
-		st.subheader("Our Team")
+		st.subheader("Amazing People")
 
-		st.markdown("Solomon")
-		st.image("content/Solomon.jpg", width = 300)
+		st.markdown("Solomon Nwokoro")
+		st.image("content/Solomon.jpg", width = 300,caption="Data Scientist")
 
-		st.markdown("Peakanyo")
-		st.image("content/Peakanyo.jpg", width = 300)
+		st.markdown("Peakanyo Mokone")
+		st.image("content/Peakanyo.jpg", width = 300, caption = "Data Analyst")
 
-		st.markdown("Farayi")
-		st.image("content/Farayi.jpg", width = 300)
+		st.markdown("Farayi Myambo")
+		st.image("content/Farayi.jpg", width = 300, caption= "Business Analyst")
 
-		st.markdown("Tristan")
-		st.image("content/Tristan.png", width = 300)
+		st.markdown("Tristan Krafft")
+		st.image("content/Tristan.png", width = 300, caption="ML Engineer")
 
 
 
