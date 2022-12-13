@@ -111,7 +111,7 @@ def main():
 	# Building out the "Information" page
 	if selection == "About":
 
-		st.markdown("<h2 style='text-align: left; color: black;'>grey</h2>", unsafe_allow_html=True)
+		st.markdown("<h2 style='text-align: left; color: grey;'>About</h2>", unsafe_allow_html=True)
 		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 800)
 
 		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
@@ -136,7 +136,6 @@ def main():
 
 		#st.markdown("Tristan Krafft")
 		with cols4:
-			st.markdown("<h2 style='text-align: left; color: black;'>grey</h2>", unsafe_allow_html=True)
 			st.image("content/Tristan.png", width = 200, caption="Tristan Krafft: ML Engineer")
 
 
