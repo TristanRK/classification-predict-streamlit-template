@@ -44,6 +44,8 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
+st.image('content/Logo2.png', width=100)
+
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
 	st.write(" ")
