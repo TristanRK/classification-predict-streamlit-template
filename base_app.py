@@ -46,7 +46,7 @@ import pandas as pd
 
 st.image('content/Logo2.png', width=100)
 
-col1, col2, col3 = st.columns([1,1,1])
+col1, col2, col3 = st.columns([1,2,3])
 with col1:
 	st.write(" ")
 with col2:
