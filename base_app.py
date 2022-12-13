@@ -56,18 +56,10 @@ with col3:
 st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(3)
-with col1:
-	st.write(" ")
-with col2:
-    st.title('EnviroData')
-with col3:
-    st.write(" ")
-
 
 st.image(
 	"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
-	width = 600,
+	width = 800,
 )
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
