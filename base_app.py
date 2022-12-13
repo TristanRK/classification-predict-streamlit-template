@@ -33,6 +33,7 @@ ima = Image.open('content/hashtags.png')
 # Adding Image to web app
 st.set_page_config(page_title="base_app.py", page_icon = im, layout="wide")
 
+###Putting logo in top middle of each page and using markdown to put company name below logo for each page
 col1, col2, col3 = st.columns(3)
 with col1:
 	st.write(" ")
@@ -40,7 +41,6 @@ with col2:
     st.image('content/Logo2.png')
 with col3:
     st.write(" ")
-
 st.markdown("<h1 style='text-align: center; color: black;'>EnviroData</h1>", unsafe_allow_html=True)
 
 ##taking away streamlit's default page menu 
@@ -55,17 +55,6 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Data dependencies
 import pandas as pd
 
-
-
-#st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
-
-
-#st.image(
-	#"https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",
-	#width = 800,
-#)
-
-
 # Vectorizer
 news_vectorizer = open("resources/Vectoriser.pkl","rb")
 tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl file
@@ -76,15 +65,8 @@ f1 = pd.read_csv("resources/f1.csv")
 
 # The main function where we will build the actual app
 def main():
-	"""Tweet Classifier App with Streamlit """
-
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-
-	#######st.title("EnviroData")
-	#######st.subheader("Climate change tweet classification")
-
-
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
 	options = ["About", "Project Information", "Models" ]
@@ -138,17 +120,17 @@ def main():
 
 		st.subheader("Amazing People")
 
-		st.markdown("Solomon Nwokoro")
-		st.image("content/Solomon.jpg", width = 300,caption="Data Scientist")
+		#st.markdown("Solomon Nwokoro")
+		st.image("content/Solomon.jpg", width = 300,caption="Solomon Nwokoro: Data Scientist")
 
-		st.markdown("Peakanyo Mokone")
-		st.image("content/Peakanyo.jpg", width = 300, caption = "Data Analyst")
+		#st.markdown("Peakanyo Mokone")
+		st.image("content/Peakanyo.jpg", width = 300, caption = "Peakanyo Mokone: Data Analyst")
 
-		st.markdown("Farayi Myambo")
-		st.image("content/Farayi.jpg", width = 300, caption= "Business Analyst")
+		#st.markdown("Farayi Myambo")
+		st.image("content/Farayi.jpg", width = 300, caption= "Farayi Myambo: Business Analyst")
 
-		st.markdown("Tristan Krafft")
-		st.image("content/Tristan.png", width = 300, caption="ML Engineer")
+		#st.markdown("Tristan Krafft")
+		st.image("content/Tristan.png", width = 300, caption="Tristan Krafft: ML Engineer")
 
 
 
@@ -156,6 +138,7 @@ def main():
 		st.markdown("<h2 style='text-align: left; color: black;'>Machine Learning Models</h2>", unsafe_allow_html=True)
 		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 800)
 		
+		st.write(" ")
 		st.write(" ")
 		st.write(" ")
 		st.write(" ")
