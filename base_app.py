@@ -120,17 +120,23 @@ def main():
 
 		st.subheader("Amazing People")
 
+		cols1, cols2,cols3,cols4 = st.columns(4)
+
 		#st.markdown("Solomon Nwokoro")
-		st.image("content/Solomon.jpg", width = 300,caption="Solomon Nwokoro: Data Scientist")
+		with cols1:
+			cols1 = st.image("content/Solomon.jpg", width = 200,caption="Solomon Nwokoro: Data Scientist")
 
 		#st.markdown("Peakanyo Mokone")
-		st.image("content/Peakanyo.jpg", width = 300, caption = "Peakanyo Mokone: Data Analyst")
+		with cols2:
+			st.image("content/Peakanyo.jpg", width = 200, caption = "Peakanyo Mokone: Data Analyst")
 
 		#st.markdown("Farayi Myambo")
-		st.image("content/Farayi.jpg", width = 300, caption= "Farayi Myambo: Business Analyst")
+		with cols3:
+			st.image("content/Farayi.jpg", width = 200, caption= "Farayi Myambo: Business Analyst")
 
 		#st.markdown("Tristan Krafft")
-		st.image("content/Tristan.png", width = 300, caption="Tristan Krafft: ML Engineer")
+		with cols4:
+			st.image("content/Tristan.png", width = 200, caption="Tristan Krafft: ML Engineer")
 
 
 
