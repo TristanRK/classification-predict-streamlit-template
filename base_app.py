@@ -73,7 +73,7 @@ def main():
 	# these are static across all pages
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = ["Models","About", "Project Information"]
+	options = ["Models", "Project Information","About"]
 	
 	selection = st.sidebar.selectbox("Page Selection", options)
 	
