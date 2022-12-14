@@ -73,76 +73,10 @@ def main():
 	# these are static across all pages
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = ["About", "Project Information", "Models" ]
+	options = ["Models","About", "Project Information"]
 	
 	selection = st.sidebar.selectbox("Page Selection", options)
 	
-
-	
-
-	# Building out the "Information" page
-	if selection == "Project Information":
-		st.markdown("<h2 style='text-align: left; color: black;'>Project Information</h2>", unsafe_allow_html=True)
-		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 650)
-		
-		
-		st.info("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received. With this context, EDSA is throwing a challeng with the task of creating a Machine Learning model that is able to classify whether or not a person believes in climate change. This would be based on their novel tweet data. Providing an accurate and robust solution to this task gives companies access to a broad base of consumer sentiment, spanning multiple demographic and geographic categories - thus increasing their insights and informing future marketing strategies.")
-		# You can read a markdown file from supporting resources folder
-		st.subheader("Where is our data from?")
-		st.markdown("The collection of this data was funded by a Canada Foundation for Innovation JELF Grant to Chris Bauch, University of Waterloo. The dataset aggregates tweets pertaining to climate change collected between Apr 27, 2015 and Feb 21, 2018. In total, 43,943 tweets were collected. Each tweet is labelled as one of 4 classes, which are described below.")
-		
-		st.subheader("Classes")
-		st.markdown("2 News: the tweet links to factual news about climate change")
-		st.markdown("1 Pro: the tweet supports the belief of man-made climate change")
-		st.markdown("0 Neutral: the tweet neither supports nor refutes the belief of man-made climate change")
-		st.markdown("-1 Anti: the tweet does not believe in man-made climate change Variable definitions")
-
-		st.subheader("Features")
-		st.markdown("sentiment: Which class a tweet belongs in (refer to Class Description above)")
-		st.markdown("message: Tweet body")
-		st.markdown("tweetid: Twitter unique id")
-
-
-		st.subheader("Raw data with sentiment labels")
-		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
-			st.write(raw[['sentiment', 'message']]) # will write the df to the page
-
-		st.subheader("Hashtag counts for each sentiment")
-		
-		#st.image("content/hashtags2.png",width = 800)
-		st.image("content/hashtag.jpg")
-
-	# Building out the "Information" page
-	if selection == "About":
-
-		st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
-		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 650)
-
-		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
-		# You can read a markdown file from supporting resources folder
-		
-
-		st.subheader("Amazing People")
-
-		cols1, cols2,cols3,cols4 = st.columns(4)
-
-		#st.markdown("Solomon Nwokoro")
-		with cols1:
-			cols1 = st.image("content/Solomon.jpg", width = 200,caption="Solomon Nwokoro: Data Scientist")
-
-		#st.markdown("Peakanyo Mokone")
-		with cols2:
-			st.image("content/Peakanyo.jpg", width = 200, caption = "Peakanyo Mokone: Data Analyst")
-
-		#st.markdown("Farayi Myambo")
-		with cols3:
-			st.image("content/Farayi.jpg", width = 200, caption= "Farayi Myambo: Business Analyst")
-
-		#st.markdown("Tristan Krafft")
-		with cols4:
-			st.image("content/Tristan.png", width = 200, caption="Tristan Krafft: ML Engineer")
-
-
 
 	if selection == "Models":
 		st.markdown("<h2 style='text-align: left; color: black;'>Machine Learning Models</h2>", unsafe_allow_html=True)
@@ -333,6 +267,70 @@ def main():
 		st.write(" ")
 
 		st.bar_chart(f1,x="Models", y="F1_score", width=400)
+
+
+	# Building out the "Information" page
+	if selection == "Project Information":
+		st.markdown("<h2 style='text-align: left; color: black;'>Project Information</h2>", unsafe_allow_html=True)
+		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 650)
+		
+		
+		st.info("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received. With this context, EDSA is throwing a challeng with the task of creating a Machine Learning model that is able to classify whether or not a person believes in climate change. This would be based on their novel tweet data. Providing an accurate and robust solution to this task gives companies access to a broad base of consumer sentiment, spanning multiple demographic and geographic categories - thus increasing their insights and informing future marketing strategies.")
+		# You can read a markdown file from supporting resources folder
+		st.subheader("Where is our data from?")
+		st.markdown("The collection of this data was funded by a Canada Foundation for Innovation JELF Grant to Chris Bauch, University of Waterloo. The dataset aggregates tweets pertaining to climate change collected between Apr 27, 2015 and Feb 21, 2018. In total, 43,943 tweets were collected. Each tweet is labelled as one of 4 classes, which are described below.")
+		
+		st.subheader("Classes")
+		st.markdown("2 News: the tweet links to factual news about climate change")
+		st.markdown("1 Pro: the tweet supports the belief of man-made climate change")
+		st.markdown("0 Neutral: the tweet neither supports nor refutes the belief of man-made climate change")
+		st.markdown("-1 Anti: the tweet does not believe in man-made climate change Variable definitions")
+
+		st.subheader("Features")
+		st.markdown("sentiment: Which class a tweet belongs in (refer to Class Description above)")
+		st.markdown("message: Tweet body")
+		st.markdown("tweetid: Twitter unique id")
+
+
+		st.subheader("Raw data with sentiment labels")
+		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
+			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+
+		st.subheader("Hashtag counts for each sentiment")
+		
+		#st.image("content/hashtags2.png",width = 800)
+		st.image("content/hashtag.jpg")
+
+	# Building out the "Information" page
+	if selection == "About":
+
+		st.markdown("<h2 style='text-align: left; color: black;'>About</h2>", unsafe_allow_html=True)
+		st.image("https://th.bing.com/th/id/R.ecbb577764245551f2eb3d68db207808?rik=7z5rKX4dMPIj0g&riu=http%3a%2f%2fworld.350.org%2fnz%2ffiles%2f2014%2f01%2fTwitter-350.jpg&ehk=JjB3BnuqD6vhFaspJVVLSwEKtbPCPc3rwUfywG77Rp4%3d&risl=&pid=ImgRaw&r=0",width = 650)
+
+		st.info("EnviroData is an environmentally focused data science consultancy founded in 2022 by four innovative individuals. These four individuals are Farayi, Solomon, Tristan and Peakanyo. As a data science consultancy, we aim to provide insights of what makes the world tick and more importantly how environmental issues are dealt with in our modern society.")
+		# You can read a markdown file from supporting resources folder
+		
+
+		st.subheader("Amazing People")
+
+		cols1, cols2,cols3,cols4 = st.columns(4)
+
+		#st.markdown("Solomon Nwokoro")
+		with cols1:
+			cols1 = st.image("content/Solomon.jpg", width = 200,caption="Solomon Nwokoro: Data Scientist")
+
+		#st.markdown("Peakanyo Mokone")
+		with cols2:
+			st.image("content/Peakanyo.jpg", width = 200, caption = "Peakanyo Mokone: Data Analyst")
+
+		#st.markdown("Farayi Myambo")
+		with cols3:
+			st.image("content/Farayi.jpg", width = 200, caption= "Farayi Myambo: Business Analyst")
+
+		#st.markdown("Tristan Krafft")
+		with cols4:
+			st.image("content/Tristan.png", width = 200, caption="Tristan Krafft: ML Engineer")
+
 
 
 # Required to let Streamlit instantiate our web app.  
